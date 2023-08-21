@@ -65,6 +65,60 @@ let coursesAndDurationArray=  [
     {title: 'Frontend', monthDuration: 4}
     ];
 
-if (coursesAndDurationArray[3].monthDuration>=5)
-    console.log('super')
-console.log(coursesAndDurationArray[3].monthDuration >=5)
+if (coursesAndDurationArray[0].monthDuration > 5) {
+    console.log('super');
+}
+if (coursesAndDurationArray[1].monthDuration > 5) {
+    console.log('super');
+}
+if (coursesAndDurationArray[2].monthDuration > 5) {
+    console.log('super');
+}
+if (coursesAndDurationArray[3].monthDuration > 5) {
+    console.log('super');
+}
+if (coursesAndDurationArray[4].monthDuration > 5) {
+    console.log('super');
+}
+if (coursesAndDurationArray[5].monthDuration > 5) {
+    console.log('super');
+}
+
+
+// -------------------------------------------/
+let x = 5;
+if (x !==0) {
+    console.log('вірно');
+} else{
+    console.log('невірно');
+}
+// -------------------------------------------/
+
+let a=1;
+let b=3;
+if (a>b){
+    console.log('a:',a);
+} else if(b>a){
+    console.log('b:',b);
+} else if(a===b){
+    console.log('equal');
+}
+
+// -------------------------------------------/
+
+ let x1=0;
+let result1=x1 || 'default';
+let result2=x1 ?? 'default';
+
+console.log(result1);
+console.log(result2);
+
+
+let xx1=false;
+if(!xx1){
+    xx1='default';
+    console.log('dddddd',xx1)
+} else {
+    console.log(xx1)
+}
+// -------------------------------------------/
