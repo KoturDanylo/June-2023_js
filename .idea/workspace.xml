@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="036e0a44-15ed-48aa-967d-99ac0c4023b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Lesson1/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lesson1/main.js" afterDir="false" />
+    <list default="true" id="036e0a44-15ed-48aa-967d-99ac0c4023b9" name="Changes" comment="HW2">
+      <change beforePath="$PROJECT_DIR$/HW3/loops.js" beforeDir="false" afterPath="$PROJECT_DIR$/HW3/loops.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +39,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
@@ -53,10 +53,76 @@
       <option name="presentableId" value="Default" />
       <updated>1692132083900</updated>
       <workItem from="1692132084937" duration="675000" />
+      <workItem from="1692132772577" duration="35376000" />
     </task>
+    <task id="LOCAL-00001" summary="HW1">
+      <option name="closed" value="true" />
+      <created>1692136204402</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1692136204402</updated>
+    </task>
+    <task id="LOCAL-00002" summary="HW1">
+      <option name="closed" value="true" />
+      <created>1692635258204</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1692635258204</updated>
+    </task>
+    <task id="LOCAL-00003" summary="HW2">
+      <option name="closed" value="true" />
+      <created>1692652383428</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1692652383428</updated>
+    </task>
+    <task id="LOCAL-00004" summary="HW2">
+      <option name="closed" value="true" />
+      <created>1692738352130</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1692738352130</updated>
+    </task>
+    <task id="LOCAL-00005" summary="HW2">
+      <option name="closed" value="true" />
+      <created>1692801497613</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1692801497613</updated>
+    </task>
+    <task id="LOCAL-00006" summary="HW2">
+      <option name="closed" value="true" />
+      <created>1692818041336</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1692818041336</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="HW1" />
+    <MESSAGE value="HW2" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW2" />
   </component>
 </project>
