@@ -1,17 +1,17 @@
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
 
-// function users(id, name, age) {
-//     document.write(
-//
-//         `<div>
-//         <p>${id}</p>
-//             <p>${name}</p>
-//                <p>${age}</p>
-//                </div>`
-// );
-// }
-//
-// users('id:1', 'name:Danylo', 'age:23' )
+function users(id, name, age) {
+    document.write(
+
+        `<div>
+        <p>id:${id}</p>
+            <p>name:${name}</p>
+               <p>age:${age}</p>
+               </div>`
+);
+}
+
+users(1, 'Danylo', 23 )
 
 // -------------------------------------------/
 
