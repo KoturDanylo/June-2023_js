@@ -3,9 +3,11 @@
 // function users(id, name, age) {
 //     document.write(
 //
-//         `<div>${id}</div>
-//             <div>${name}</div>
-//                <div>${age}</div>`
+//         `<div>
+//         <p>${id}</p>
+//             <p>${name}</p>
+//                <p>${age}</p>
+//                </div>`
 // );
 // }
 //
