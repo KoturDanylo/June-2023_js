@@ -157,7 +157,6 @@
 //
 //     arr[index1]=numIndex2;
 //     arr[index2]=numIndex1;
-//
 //     return arr;
 // }
 //
