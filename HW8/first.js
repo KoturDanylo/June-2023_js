@@ -210,4 +210,4 @@ class Prince {
 }
 let prince= new Prince(`danylo`,23,38)
 
-let foundCinderella= prince.findCinderella(cinderellas);
+let foundCinderella= prince.findCinderella(cinderellas)
