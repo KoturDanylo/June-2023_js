@@ -3,6 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .main{
+            border: red solid 3px;
+            margin: 10px;
+        }
+        .flex{
+            display: flex;
+        }
+        .growM{
+            flex-grow:1;
+        }
+        .growH{
+            flex-grow:1;
+        }
+    </style>
 </head>
 <body>
 <script>
@@ -168,75 +183,102 @@
      //
      // Створити для кожного елементу масиву свій блок, блок розділити блоками, в яких будуть зберігатись значення окремих властивостей, для властивості modules зробити список з елементами
      // Приклад структири знаходиться у файлі example.png який лежить в папці з поточним фйлом
-     // let coursesArray = [
-     //    {
-    //         title: 'JavaScript Complex',
-    //         monthDuration: 5,
-    //         hourDuration: 909,
-    //         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
-    //     },
-    //     {
-    //         title: 'Java Complex',
-    //         monthDuration: 6,
-    //         hourDuration: 909,
-    //         modules: ['html',
-    //             'css',
-    //             'js',
-    //             'mysql',
-    //             'mongodb',
-    //             'angular',
-    //             'aws',
-    //             'docker',
-    //             'git',
-    //             'java core',
-    //             'java advanced']
-    //     },
-    //     {
-    //         title: 'Python Complex',
-    //         monthDuration: 6,
-    //         hourDuration: 909,
-    //         modules: ['html',
-    //             'css',
-    //             'js',
-    //             'mysql',
-    //             'mongodb',
-    //             'angular',
-    //             'aws',
-    //             'docker',
-    //             'python core',
-    //             'python advanced']
-    //     },
-    //     {
-    //         title: 'QA Complex',
-    //         monthDuration: 4,
-    //         hourDuration: 909,
-    //         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
-    //     },
-    //     {
-    //         title: 'FullStack',
-    //         monthDuration: 7,
-    //         hourDuration: 909,
-    //         modules: ['html',
-    //             'css',
-    //             'js',
-    //             'mysql',
-    //             'mongodb',
-    //             'react',
-    //             'angular',
-    //             'aws',
-    //             'docker',
-    //             'git',
-    //             'node.js',
-    //             'python',
-    //             'java']
-    //     },
-    //     {
-    //         title: 'Frontend',
-    //         monthDuration: 4,
-    //         hourDuration: 909,
-    //         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
-    //     }
-    // ];
+     let coursesArray = [
+        {
+            title: 'JavaScript Complex',
+            monthDuration: 5,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+        },
+        {
+            title: 'Java Complex',
+            monthDuration: 6,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'angular',
+                'aws',
+                'docker',
+                'git',
+                'java core',
+                'java advanced']
+        },
+        {
+            title: 'Python Complex',
+            monthDuration: 6,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'angular',
+                'aws',
+                'docker',
+                'python core',
+                'python advanced']
+        },
+        {
+            title: 'QA Complex',
+            monthDuration: 4,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+        },
+        {
+            title: 'FullStack',
+            monthDuration: 7,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'react',
+                'angular',
+                'aws',
+                'docker',
+                'git',
+                'node.js',
+                'python',
+                'java']
+        },
+        {
+            title: 'Frontend',
+            monthDuration: 4,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+        }
+    ];
+
+    for(const item of coursesArray) {
+        let block = document.createElement(`div`)
+        let title = document.createElement(`h1`)
+        let duration = document.createElement(`div`)
+        let month = document.createElement(`div`)
+        let hour = document.createElement(`div`)
+        let ul = document.createElement(`ul`)
+
+        title.innerText=item.title
+        month.innerText=item.monthDuration
+        hour.innerText=item.hourDuration
+
+        for (const modul of item.modules){
+            const li= document.createElement(`li`)
+            li.innerText=modul;
+            ul.appendChild(li)
+        }
+        block.classList.add(`main`)
+        duration.classList.add(`flex`)
+        month.classList.add(`growM`)
+        hour.classList.add(`growH`)
+
+        duration.append(month,hour)
+        block.append(title,duration,ul)
+        document.body.appendChild(block);
+    }
     // // ------------------
 </script>
 
