@@ -1,0 +1,39 @@
+
+.user-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.user-block {
+    width: 48%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.user-details-block {
+    margin-bottom: 20px;
+}
+
+.post-block {
+    width: 20%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.post-details-block {
+    margin-bottom: 20px;
+
+
+}
+
+.comment-block {
+    width: 23%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}

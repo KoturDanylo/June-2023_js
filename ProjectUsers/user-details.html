@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<h1>User details</h1>
+<div id="user-details" class="user-details"></div>
+<button id="load-posts">Load Users Posts</button>
+<div id="posts" class="posts"></div>
+
+<script>
+    let userDetailsContainer= document.getElementById(`user-details`)
+    let postsContainer= document.getElementById(`posts`)
+    let loadPostsButton= document.getElementById(`load-posts`)
+
+    let urlParams= new URLSearchParams(window.location.search);
+    let userId= urlParams.get(`id`);
+
+    fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+     .then(value => value.json())
+    .then(user => {
+        let userDetailsBlock= document.createElement(`div`)
+        userDetailsBlock.classList.add(`user-details-block`)
+
+        let userIdElement = document.createElement(`p`);
+        userIdElement.innerText=`ID: ${user.id}`;
+
+        const userNameElement = document.createElement('p');
+        userNameElement.innerText = `Name: ${user.name}`;
+
+        let userUsernameElement = document.createElement(`p`);
+        userUsernameElement.innerText=`Username: ${user.username}`;
+
+        let userEmailElement = document.createElement(`p`);
+        userEmailElement.innerText=`Email: ${user.email}`;
+
+        const userAddressElement = document.createElement('p');
+        userAddressElement.innerText = `Address:
+        Street:${user.address.street},
+        Suite: ${user.address.suite},
+        City: ${user.address.city},
+        Zipcode:${user.address.zipcode},
+        Geo:
+        Lng:${user.address.geo.lng}
+        Lat:${user.address.geo.lat}`;
+
+        let userPhoneElement = document.createElement(`p`);
+        userPhoneElement.innerText=`Phone: ${user.phone}`;
+
+        let userWebsiteElement = document.createElement(`p`);
+        userWebsiteElement.innerText=`Website: ${user.website}`;
+
+        let userCompanyElement = document.createElement(`p`);
+        userCompanyElement.innerText=`Company:
+        Name:${user.company.name},
+        CatchPhrase:${user.company.catchPhrase},
+        Bs:${user.company.bs} `;
+
+
+         userDetailsBlock.append(userIdElement, userNameElement,userUsernameElement,userEmailElement,userAddressElement,userPhoneElement,userWebsiteElement,userCompanyElement)
+
+      userDetailsContainer.appendChild(userDetailsBlock)
+    });
+
+    loadPostsButton.addEventListener(`click`, ()=>{
+
+        postsContainer.innerHTML=``;
+
+        fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
+            .then(value => value.json())
+            .then(posts=>{
+                for( const post of posts){
+                    let postBlock=document.createElement(`div`)
+                    postBlock.classList.add(`post-block`);
+
+                    let postTitle= document.createElement(`p`)
+                    postTitle.innerText=post.title;
+
+                    let postDetailsLink= document.createElement(`a`)
+                    postDetailsLink.href=`post-details.html?id=${post.id}`;
+                    postDetailsLink.innerText=`Post Details`;
+
+                    postBlock.append(postTitle, postDetailsLink)
+                    postsContainer.appendChild(postBlock);
+                }
+            })
+    })
+
+
+
+</script>
+
+</body>
+</html>

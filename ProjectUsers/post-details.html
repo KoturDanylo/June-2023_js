@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Post details</h1>
+<div id="post-details" class="post-details"></div>
+<div id="comments" class="comments"></div>
+<script>
+
+  let postDetailsContainer=document.getElementById(`post-details`)
+  let commentsContainer= document.getElementById(`comments`)
+
+  let urlParams=new URLSearchParams(window.location.search)
+  let postId=urlParams.get(`id`)
+
+
+  fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+          .then(value => value.json())
+          .then(post=>{
+            let postDetailsBlock= document.createElement(`div`)
+            postDetailsBlock.classList.add(`post-details-block`);
+
+            let postIdElement= document.createElement(`p`)
+            postIdElement.innerText=`Post ID: ${post.id}`;
+
+            let postTitleElement= document.createElement(`p`)
+            postTitleElement.innerText=`Title: ${post.title}`;
+
+
+            postDetailsBlock.append(postIdElement, postTitleElement)
+
+            postDetailsContainer.appendChild(postDetailsBlock)
+          });
+
+  fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
+          .then(value => value.json())
+          .then(comments=>{
+
+            for (let comment of comments){
+              let commentBlock = document.createElement(`div`)
+              commentBlock.classList.add(`comment-block`);
+
+              let commentName = document.createElement(`p`)
+              commentName.innerText=`Name: ${comment.name}`;
+
+              let commentEmail = document.createElement(`p`)
+              commentEmail.innerText=`Email: ${comment.email}`;
+
+              let commentBody = document.createElement(`p`)
+              commentBody.innerText=`Body: ${comment.body}`;
+
+
+
+              commentBlock.append(commentName, commentEmail, commentBody)
+
+
+              commentsContainer.appendChild(commentBlock)
+            }
+          })
+
+</script>
+
+</body>
+</html>
