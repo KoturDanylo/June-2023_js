@@ -21,10 +21,20 @@
                         <b>Name:</b> ${user.name}<br>
                         <b>Username:</b> ${user.username}<br>
                         <b>Email:</b> ${user.email}<br>
-                        <b>Street:</b> ${user.address.street}<br>
+                        <b>Address:</b><br>
+                           Street:${user.address.street}<br>
+                           Suite:${user.address.suite}<br>
+                           City:${user.address.city}<br>
+                           Zipcode:${user.address.zipcode}<br>
+                           <b>Geo:</b><br>
+                           lat:${user.address.geo.lat}<br>
+                           lng:${user.address.geo.lng}<br>
                         <b>Phone:</b> ${user.phone}<br>
                         <b>Website:</b> ${user.website}<br>
-                        <b>Company Name:</b> ${user.company.name}`;
+                        <b>Company:</b> <br>
+                            Name:${user.company.name}<br>
+                            CatchPhrase:${user.company.catchPhrase}<br>
+                            Bs:${user.company.bs}<br>`;
                 ul.appendChild(li);
             })
             .catch((error) => {

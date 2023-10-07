@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Details</title>
+</head>
+<body>
+<div id="user-details"></div>
+
+<script>
+  // Отримуємо id користувача з параметрів URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const userId = urlParams.get('id');
+
+  // Отримуємо інформацію про користувача
+  fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+          .then(response => response.json())
+          .then(user => {
+            const userDetails = document.getElementById('user-details');
+
+            // Виводимо інформацію про користувача
+            userDetails.innerHTML = `<b>User ID:</b> ${user.id}<br>
+                        <b>Name:</b> ${user.name}<br>
+                        <b>Username:</b> ${user.username}<br>
+                        <b>Email:</b> ${user.email}<br>
+                        <b>Address:</b><br>
+                           Street:${user.address.street}<br>
+                           Suite:${user.address.suite}<br>
+                           City:${user.address.city}<br>
+                           Zipcode:${user.address.zipcode}<br>
+                           <b>Geo:</b><br>
+                           lat:${user.address.geo.lat}<br>
+                           lng:${user.address.geo.lng}<br>
+                        <b>Phone:</b> ${user.phone}<br>
+                        <b>Website:</b> ${user.website}<br>
+                        <b>Company:</b> <br>
+                            Name:${user.company.name}<br>
+                            CatchPhrase:${user.company.catchPhrase}<br>
+                            Bs:${user.company.bs}<br>`;
+
+            const userPostsButton = document.createElement('button');
+            userPostsButton.textContent = 'Posts of Current User';
+            userPostsButton.addEventListener('click', () => {
+              // Перенаправляємо на сторінку з постами користувача з параметром id користувача
+              window.location.href = `user-posts.html?id=${user.id}`;
+            });
+            userDetails.appendChild(userPostsButton);
+          });
+</script>
+</body>
+</html>

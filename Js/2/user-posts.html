@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Posts</title>
+</head>
+<body>
+<div id="user-posts"></div>
+
+<script>
+  // Отримуємо id користувача з параметрів URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const userId = urlParams.get('id');
+
+  // Отримуємо список постів поточного користувача
+  fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
+          .then(response => response.json())
+          .then(posts => {
+            const userPosts = document.getElementById('user-posts');
+
+            // Проходимося по кожному посту і створюємо блоки та кнопки
+            posts.forEach(post => {
+              const postBlock = document.createElement('div');
+              postBlock.classList.add('post-block');
+
+              const postInfo = document.createElement('p');
+              postInfo.innerHTML = `<strong>Title:</strong> ${post.title}`;
+              postBlock.appendChild(postInfo);
+
+              const postDetailsButton = document.createElement('button');
+              postDetailsButton.textContent = 'Post Details';
+              postDetailsButton.addEventListener('click', () => {
+                // Перенаправляємо на сторінку post-details.html з параметром id посту
+                window.location.href = `post-details.html?id=${post.id}`;
+              });
+              postBlock.appendChild(postDetailsButton);
+
+              userPosts.appendChild(postBlock);
+            });
+          });
+</script>
+</body>
+</html>
